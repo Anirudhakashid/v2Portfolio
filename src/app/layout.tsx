@@ -20,8 +20,10 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://anirudhakashid.tech"),
   title: "Anirudha Kashid",
   description: "portfolio and digital garden.",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
   openGraph: {
     title: "Anirudha | Portfolio",
     description: "portfolio and digital garden.",
@@ -55,10 +57,11 @@ export default function RootLayout({
       className={`${serif.variable} ${mono.variable} ${sans.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className="bg-neutral-950 text-neutral-200 antialiased font-sans selection:bg-neutral-700 selection:text-white">
-        <main className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-          {children}
-        </main>
+        <main className="h-screen overflow-hidden">{children}</main>
 
         {/* Databuddy Analytics */}
         <Databuddy clientId="t8rtm-9BXY7cXHQd41jsH" enableBatching={true} />

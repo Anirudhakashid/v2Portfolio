@@ -25,7 +25,7 @@ export const Main = () => {
     <section className="grow">
       <div className="flex items-center justify-between mb-2">
         <div className="flex flex-col">
-          <h1 className="font-ppModwest text-2xl">Anirudha Kashid</h1>
+          <h1 className="font-mono text-2xl">Anirudha Kashid</h1>
           <h2 className="text-secondary-foreground mb-4 font-sm overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.span
@@ -35,7 +35,7 @@ export const Main = () => {
                 animate="animate"
                 exit="exit"
                 transition={{ duration: 0.7 }}
-                className="block"
+                className="block text-sm font-mono"
               >
                 {roles[index]}
               </motion.span>
@@ -54,15 +54,17 @@ export const Main = () => {
         </a> */}
       </div>
 
-      <p className="mb-2">
-        21 y/o CS undergrad exploring the full-stack space, pushing commits
-        along the way.
-      </p>
+      <div className="flex flex-col gap-2">
+        <p className="mb-2 font-mono">
+          21 y/o CS undergrad exploring the full-stack space, pushing commits
+          along the way.
+        </p>
 
-      <p>
-        in my downtime, i drift between tech podcasts and the occasional sci-fi
-        movies.
-      </p>
+        <p className="font-mono">
+          in my downtime, i drift between tech podcasts and the occasional
+          sci-fi movies.
+        </p>
+      </div>
     </section>
   );
 };

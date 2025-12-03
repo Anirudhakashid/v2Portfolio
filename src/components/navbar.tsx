@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <Link
         href="/blogs"
         className="underline decoration-dashed underline-offset-[5px]"
