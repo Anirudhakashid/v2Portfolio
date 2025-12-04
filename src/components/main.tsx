@@ -54,13 +54,13 @@ export const Main = () => {
         </a> */}
       </div>
 
-      <div className="flex flex-col gap-2">
-        <p className="mb-2 font-mono">
+      <div className="flex flex-col gap-2 text-md font-mono">
+        <p className="mb-2">
           21 y/o CS undergrad exploring the full-stack space, pushing commits
           along the way.
         </p>
 
-        <p className="font-mono">
+        <p className="">
           in my downtime, i drift between tech podcasts and the occasional
           sci-fi movies.
         </p>
