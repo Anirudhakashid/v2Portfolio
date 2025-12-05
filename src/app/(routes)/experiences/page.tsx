@@ -6,6 +6,7 @@ const experiences = [
   {
     id: "1",
     title: "Sankalpsphere",
+    designation: "Frontend Developer Intern",
     href: "https://www.linkedin.com/company/namastep/",
     date: "Sept 2025 - Nov 2025",
   },
@@ -36,29 +37,18 @@ export default function Experience() {
                   duration: 0.3,
                 }}
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs md:text-base">
-                    {experience.date}
-                  </span>
-                  <h3 className="text-xs md:text-base">
-                    {experience.id === "3" ? (
-                      <>
-                        Frontend Intern at{" "}
-                        <span className="underline decoration-dashed underline-offset-[5px]">
-                          MythyaVerse
-                        </span>
-                      </>
-                    ) : experience.id === "2" ? (
-                      <>
-                        Member at{" "}
-                        <span className="underline decoration-dashed underline-offset-[5px]">
-                          Project Athena
-                        </span>
-                      </>
-                    ) : (
-                      experience.title
-                    )}
-                  </h3>
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xs md:text-base">{experience.title}</h3>
+                    <span className="text-xs text-secondary-foreground md:text-sm">
+                      {experience.date}
+                    </span>
+                  </div>
+                  {experience.designation && (
+                    <p className="text-xs text-secondary-foreground md:text-sm text-left">
+                      {experience.designation}
+                    </p>
+                  )}
                 </div>
               </motion.a>
             ))}
