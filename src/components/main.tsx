@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "./theme-toggle";
 
 const roles = ["engineer", "software developer", "full-stack", "shitposter"];
 
@@ -52,6 +53,10 @@ export const Main = () => {
         >
           resume <ExternalLink size={12} />
         </a> */}
+
+        <div className="items-center mb-8 mr-2 text-secondary-foreground">
+          <ThemeToggle />
+        </div>
       </div>
 
       <div className="flex flex-col gap-2 text-md font-mono">

@@ -27,7 +27,7 @@ export default function Experience() {
                 href={experience.href}
                 target="_blank"
                 rel="noreferrer"
-                className="relative z-10 flex cursor-pointer flex-col gap-10 rounded-lg border border-secondary-foreground/20 bg-[#111111] p-4 hover:bg-[#1a1a1a]"
+                className="relative z-10 flex cursor-pointer flex-col gap-10 rounded-lg border border-secondary-foreground/20 bg-background p-4 hover:bg-background/10"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 initial={{ opacity: 0, y: 10 }}

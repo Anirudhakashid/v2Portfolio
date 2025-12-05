@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Databuddy } from "@databuddy/sdk/react";
+import { ThemeProvider } from "@/components/theme-porvider";
 
 //configure the fonts
 const serif = Playfair_Display({
@@ -61,10 +62,16 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="bg-neutral-950 text-neutral-200 antialiased font-sans selection:bg-neutral-700 selection:text-white">
-        <main className="h-screen overflow-hidden">{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          <main className="h-screen overflow-hidden">{children}</main>
 
-        {/* Databuddy Analytics */}
-        <Databuddy clientId="t8rtm-9BXY7cXHQd41jsH" enableBatching={true} />
+          {/* Databuddy Analytics */}
+          <Databuddy clientId="t8rtm-9BXY7cXHQd41jsH" enableBatching={true} />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -46,7 +46,7 @@ export default function BlogPage() {
           {blogs.map((blog, index) => (
             <motion.div
               key={index}
-              className="relative z-10 flex cursor-pointer flex-col gap-1 rounded-lg border border-secondary-foreground/20 bg-[#111111] p-4 text-foreground hover:bg-[#1a1a1a]"
+              className="relative z-10 flex cursor-pointer flex-col gap-1 rounded-lg border border-secondary-foreground/20 bg-background p-4 text-foreground hover:bg-background/10"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               initial={{ opacity: 0, y: 10 }}
