@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Databuddy } from "@databuddy/sdk/react";
-import { ThemeProvider } from "@/components/theme-porvider";
+import { ThemeProvider } from "@/components/theme-provider";
 
 //configure the fonts
 const serif = Playfair_Display({
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Anirudha's Portfolio",
     images: [
       {
-        url: "/ogImage.jpg",
+        url: "/ogImage.png",
         width: 1200,
         height: 630,
         alt: "Anirudha Portfolio Preview",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anirudha | Portfolio",
     description: "portfolio and digital garden.",
-    images: ["/ogImage.jpg"],
+    images: ["/ogImage.png"],
   },
 };
 
@@ -61,7 +61,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-neutral-950 text-neutral-200 antialiased font-sans selection:bg-neutral-700 selection:text-white">
+      <body className="antialiased font-sans selection:bg-neutral-700 selection:text-white">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

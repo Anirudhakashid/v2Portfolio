@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { BackButton } from "@/components/back-btn";
 
@@ -12,6 +13,18 @@ const experiences = [
   },
 ];
 
+const container = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+} as const;
+
 export default function Experience() {
   return (
     <div className="flex min-h-screen w-full justify-center px-4 py-40 md:py-52">
@@ -19,27 +32,37 @@ export default function Experience() {
         <div>
           <BackButton />
         </div>
+
+        <motion.h1
+          className="text-lg font-mono text-foreground"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          experiences
+        </motion.h1>
+
         <section className="relative flex flex-col gap-4">
-          <div className="space-y-4">
-            {experiences.map((experience, index) => (
+          <motion.div
+            className="space-y-4"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            {experiences.map((experience) => (
               <motion.a
                 key={experience.id}
                 href={experience.href}
                 target="_blank"
-                rel="noreferrer"
-                className="relative z-10 flex cursor-pointer flex-col gap-10 rounded-lg border border-secondary-foreground/20 bg-background p-4 hover:bg-background/10"
+                rel="noopener noreferrer"
+                className="relative z-10 flex cursor-pointer flex-col gap-10 rounded-lg border border-secondary-foreground/20 bg-background p-4 transition-colors duration-200 hover:border-secondary-foreground/40 hover:bg-surface/50"
+                variants={item}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{
-                  duration: 0.3,
-                }}
               >
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xs md:text-base">{experience.title}</h3>
+                    <h2 className="text-xs md:text-base">{experience.title}</h2>
                     <span className="text-xs text-secondary-foreground md:text-sm">
                       {experience.date}
                     </span>
@@ -52,7 +75,7 @@ export default function Experience() {
                 </div>
               </motion.a>
             ))}
-          </div>
+          </motion.div>
         </section>
       </div>
     </div>

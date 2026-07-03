@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./theme-toggle";
+import { Download } from "lucide-react";
 
 const roles = ["engineer", "software developer", "full-stack", "shitposter"];
 
@@ -43,16 +44,6 @@ export const Main = () => {
             </AnimatePresence>
           </h2>
         </div>
-        {/* <a
-          href="{LINK_TO_RESUME_PDF}"
-          className="hidden md:flex items-center gap-1 text-base text-secondary-foreground"
-          download="Anirudha_kashid_resume.pdf"
-          rel="noopener noreferrer"
-          target="_blank"
-          aria-label="Download Resume"
-        >
-          resume <ExternalLink size={12} />
-        </a> */}
 
         <div className="items-center mb-8 mr-2 text-secondary-foreground">
           <ThemeToggle />
@@ -70,6 +61,17 @@ export const Main = () => {
           sci-fi movies.
         </p>
       </div>
+
+      <a
+        href={"/Anirudha_Kashid_Resume.pdf"}
+        className="inline-flex items-center gap-1.5 mt-5 text-md font-mono text-secondary-foreground hover:text-foreground transition-colors"
+        download="Anirudha_Kashid_Resume.pdf"
+        rel="noopener noreferrer"
+        target="_blank"
+        aria-label="Download Resume"
+      >
+        resume <Download size={14} />
+      </a>
     </section>
   );
 };

@@ -25,15 +25,17 @@ export default function Home() {
         <Main />
         <Navbar />
 
-        <div className="text-xs text-secondary-foreground">
-          this site is <span>open source</span> and <span>free to use</span>.
-          <div>
+        <div className="rounded-md border border-secondary-foreground/10 bg-surface/50 px-3 py-2.5 text-xs text-secondary-foreground/70">
+          <p>
+            this site is open source and free to use.
+          </p>
+          <p>
             built with{" "}
             <a
               href="https://nextjs.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-dashed underline-offset-3 transition-colors duration-300 hover:text-white"
+              className="underline decoration-dashed underline-offset-3 transition-colors duration-300 hover:text-foreground"
             >
               Next.js
             </a>{" "}
@@ -42,12 +44,12 @@ export default function Home() {
               href="https://x.com/anirudha_kashid"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-dashed underline-offset-3 transition-colors duration-300 hover:text-white"
+              className="underline decoration-dashed underline-offset-3 transition-colors duration-300 hover:text-foreground"
             >
               @anirudha_kashid
             </a>
             .
-          </div>
+          </p>
         </div>
 
         <Footer />

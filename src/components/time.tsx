@@ -20,5 +20,5 @@ export default function Time() {
     return () => clearInterval(id);
   }, []);
 
-  return <div className="text-sm font-ppModwest text-neutral-500">{time}</div>;
+  return <div className="text-sm font-mono text-secondary-foreground">{time}</div>;
 }
